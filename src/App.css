@@ -12,14 +12,21 @@
 .header {
     background-color: gray;
     color: white;
-    text-align: center;
-    height: 50px;
+    object-position: left;
+    height: 55px;
+
+}
+.logoHeader {
+    width: 45px;
+    padding: 5px 5px 5px 15px;
+
 }
 
 .navbar {
     flex: 1;
     background-color: pink;
-    max-width: 225px;
+    min-width: 155px;
+    padding: 10px 10px 10px 15px;
 }
 
 .content {
@@ -27,9 +34,15 @@
 }
 
 .footer {
-    height: 40px;
+    display: flex;
+    justify-content: center;
+    height: 55px;
     background-color: rgb(84, 237, 84);
+    text-align: center;
+
 }
+
+
 
 .content-wrapper {
     display: flex;

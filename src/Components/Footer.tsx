@@ -1,7 +1,7 @@
 export const Footer = () => {
     return (
         <footer className="footer">
-            --FOOTER-- it-camasutre.io -- FOTER--
+            <p>--FOOTER-- it-camasutre.io -- FOOTER--</p>
         </footer>
     )
 }
