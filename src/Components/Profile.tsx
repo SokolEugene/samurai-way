@@ -1,8 +1,8 @@
-
+import bgImg from '../images/bg-img.jpg'
 
 export const Profile = () => {
     return (<div className="content">
-            <div><img src="../images/bg-img.jpg" alt="#"/></div>
+            <div><img src={bgImg}/></div>
             <div>
                 ava + description
             </div>

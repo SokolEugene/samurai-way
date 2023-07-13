@@ -1,7 +1,8 @@
+import logo from '../images/logo.png'
 export const Header = () => {
     return (
         <header className="header">
-            <img src="../images/logo.png" alt=""/>
+            <img className="logoHeader" src={logo} alt=""/>
         </header>
     )
 }
