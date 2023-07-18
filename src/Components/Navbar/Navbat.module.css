@@ -1,0 +1,6 @@
+.navbar {
+    flex: 1;
+    background-color: #06a511;
+    min-width: 155px;
+    padding: 10px 10px 10px 15px;
+}

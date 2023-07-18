@@ -4,35 +4,19 @@
     padding: 0;
 }
 
-.main {
+/*.main {
     display: flex;
     flex-direction: row;
     height: calc(100% - 50px);
-}
-.header {
-    background-color: gray;
-    color: white;
-    text-align: center;
-    height: 50px;
-}
+}*/
 
-.navbar {
-    flex: 1;
-    background-color: pink;
-    max-width: 225px;
-}
-
-.content {
+/*.content {
     height: calc(100% - 40px);
-}
+}*/
 
-.footer {
-    height: 40px;
-    background-color: rgb(84, 237, 84);
-}
-
-.content-wrapper {
+.contentWrapper {
     display: flex;
-    flex-direction: row;
-    height: calc(100% - 50px);
+    flex-direction: column;
+    height: 100vh;
+
 }

@@ -1,18 +1,17 @@
 import React from 'react';
 import './App.css';
+import {Header} from "./Components/Header/Header";
 
-import {Footer} from "./Components/Footer";
-import {Header} from "./Components/Header";
-
-import {Maincontent} from "./Components/Maincontent";
+import {Footer} from "./Components/Footer/Footer";
+import {MainContent} from './Components/MainContent/MainContent';
 
 
 
 const App =() => {
     return (
-        <div>
+        <div className={"contentWrapper"}>
             <Header/>
-            <Maincontent/>
+            <MainContent/>
             <Footer/>
         </div>
     );

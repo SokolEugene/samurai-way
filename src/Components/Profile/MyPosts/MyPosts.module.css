@@ -1,0 +1,13 @@
+.content {
+    flex: 10;
+    background-color: green;
+}
+
+.bgImg {
+    width: 100%;
+}
+
+.bgImg img {
+    width: 100%;
+
+}

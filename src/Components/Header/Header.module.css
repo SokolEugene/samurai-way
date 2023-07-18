@@ -1,0 +1,13 @@
+.header {
+    flex: 0 0 auto; /* Не увеличивается и не уменьшается */
+    background-color: #68cb41;
+    height: 55px;
+    /*background-color: gray;
+    color: white;
+    object-position: left;
+    height: 55px;*/
+}
+.logoHeader {
+    width: 45px;
+    padding: 5px 5px 5px 15px;
+}
