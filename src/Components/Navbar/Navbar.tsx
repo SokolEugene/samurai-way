@@ -1,12 +1,13 @@
 import s from './Navbat.module.css'
+
 export const Navbar = () => {
     return (
         <nav className={s.navbar}>
-            <div className={s.item}><a>Profile</a></div>
-            <div className={s.item}><a>Messages</a></div>
-            <div className={s.item}><a>News</a></div>
-            <div className={s.item}><a>Music</a></div>
-            <div className={s.item}><a>Settings</a></div>
+            <div className={s.item}><a href={'/profile'}>Profile</a></div>
+            <div className={s.item}><a href={'/dialogs'}>Messages</a></div>
+            <div className={s.item}><a href={'/news'}>News</a></div>
+            <div className={s.item}><a href={'/music'}>Music</a></div>
+            <div className={s.item}><a href={'/settings'}>Settings</a></div>
         </nav>
     )
 }
