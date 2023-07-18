@@ -1,4 +1,10 @@
-.mainContnent{
+.mainContent{
     flex: 1; /* Занимает все доступное свободное место между header и footer */
     display: flex;
+}
+
+.content {
+    flex: 10;
+    background-color: #72e14f;
+
 }
