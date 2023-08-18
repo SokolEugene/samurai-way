@@ -22,9 +22,6 @@ export const MainContent = () => {
     <Route path={'/music'} Component={Music}/>
     <Route path={'/settings'} Component={Settings}/>
 </Routes>
-
-            {/*<Profile/>
-            <Dialogs/>*/}
         </div>
     </div>
 </BrowserRouter>

@@ -1,3 +1,30 @@
-.dialogs{
+.dialogs {
+    display: flex;
     padding: 10px 10px 10px 15px;
+
+}
+
+.dialogsItem {
+    flex: 1;
+    background-color: lightgray;
+    padding: 10px 10px 10px 15px;
+}
+
+.dialogsItem .active {
+    color: yellow;
+}
+.dialogs {
+
+}
+
+.dialog {
+
+}
+.messages {
+    flex: 5;
+    background-color: lightblue;
+    padding: 10px 10px 10px 15px;
+}
+.message {
+
 }

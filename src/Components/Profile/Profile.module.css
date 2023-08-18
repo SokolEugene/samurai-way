@@ -1,7 +1,7 @@
-/*.content {*/
-/*    flex: 10;*/
-/*    background-color: #72e14f;*/
-/*}*/
+.content {
+    flex: 10;
+    background-color: #72e14f;
+}
 
 .bgImg {
     width: 100%;
