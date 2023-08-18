@@ -1,16 +1,12 @@
-import bgImg from '../../images/bg-img.jpg'
-import s from './Profile.module.css'
 import {MyPosts} from './MyPosts/MyPosts';
+import {ProfileInfo} from './ProfileInfo/ProfileInfo';
+import s from './Profile.module.css';
 
 export const Profile = () => {
     return (
-        <div className={s.content}>
-            <div className={s.bgImg}><img src={bgImg}/></div>
-            <div className={s.posts}>
-                <div>
-                    ava + description
-                </div>
-                <MyPosts/></div>
+        <div className={"profileContent"}>
+            <ProfileInfo/>
+            <MyPosts/>
         </div>
     )
 }

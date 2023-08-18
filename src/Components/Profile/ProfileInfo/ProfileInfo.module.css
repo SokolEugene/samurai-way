@@ -1,0 +1,12 @@
+.description {
+    padding: 10px 10px 10px 15px;
+}
+.bgImg {
+    display: flex;
+}
+
+.bgImg .img {
+    width: 100%;
+    height: 100%;
+}
+

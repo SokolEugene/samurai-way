@@ -11,21 +11,19 @@ import {Settings} from '../Settings/Settings';
 export const MainContent = () => {
 
     return (
-<BrowserRouter>
-    <div className={s.mainContent}>
-        <Navbar/>
-        <div className={s.content}>
-<Routes>
-    <Route path={'/profile'} Component={Profile}/>
-    <Route path={'/dialogs'} Component={Dialogs}/>
-    <Route path={'/news'} Component={News}/>
-    <Route path={'/music'} Component={Music}/>
-    <Route path={'/settings'} Component={Settings}/>
-</Routes>
-        </div>
-    </div>
-</BrowserRouter>
-
-
+        <BrowserRouter>
+            <div className={s.mainContent}>
+                <Navbar/>
+                <div className={s.content}>
+                    <Routes>
+                        <Route path={'/profile'} Component={Profile}/>
+                        <Route path={'/dialogs/*'} Component={Dialogs}/>
+                        <Route path={'/news'} Component={News}/>
+                        <Route path={'/music'} Component={Music}/>
+                        <Route path={'/settings'} Component={Settings}/>
+                    </Routes>
+                </div>
+            </div>
+        </BrowserRouter>
     )
 }
