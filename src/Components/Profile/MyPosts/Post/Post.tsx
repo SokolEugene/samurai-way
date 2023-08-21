@@ -1,12 +1,10 @@
 import s from './Post.module.css'
 import avatar from '../../../../images/avatar.png'
+import {MyPostPropsType} from '../MyPosts'
 
-type MyPostsPropsType = {
-    message?: string
-    likeCounts?: number
-}
 
-export const Post = (props: MyPostsPropsType) => {
+export const Post = (props: MyPostPropsType) => {
+
     return <div className={s.item}>
         <img src={avatar} alt="avatar"/>
         <a>{props.message}</a>
