@@ -1,33 +1,39 @@
 .dialogs {
-    display: flex;
-    padding: 10px 10px 10px 15px;
-
-}
-
-.dialogsItem {
-
-    flex: 1;
-    background-color: #b9b405;
-    padding: 10px 10px 10px 15px;
-}
-
-.dialogsItem .active {
-    color: white;
-    text-decoration: none;
-}
-.dialogs {
-
-}
-
-.dialog {
-    color: rgba(232,232,238,0.96);
-    text-decoration: none;
+    /*padding: 10px 10px 10px 15px;*/
+    background-color: #ff7321;
 }
 .messages {
     flex: 5;
     background-color: #fffa05;
     padding: 10px 10px 10px 15px;
 }
-.message {
-
+.dialog {
+    /*flex: 1;*/
+    /*background-color: #b9b405;*/
+    padding: 10px 10px 10px 15px;
 }
+
+.item {
+    /*color: rgba(232,232,238,0.96);*/
+    color: red;
+    text-decoration: none;
+}
+.item .active {
+    color: white;
+    text-decoration: none;
+}
+/*.dialog {
+    color: rgba(232,232,238,0.96);
+    text-decoration: none;
+}*/
+
+/*.dialogItem {
+    color: rgba(232,232,238,0.96);
+    !*margin-bottom: 10px;*!
+    text-decoration: none;
+}*/
+/*
+.dialogItem .active {
+    color: red;
+    text-decoration: none;
+}*/
