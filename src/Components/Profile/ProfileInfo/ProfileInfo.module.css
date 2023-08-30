@@ -1,6 +1,6 @@
 .profileInfo {
     display: flex;
-    flex: 1;
+    height: 100%;
     flex-direction: column;
     position: relative;
 }
@@ -8,14 +8,8 @@
     padding: 10px 10px 10px 15px;
 }
 
-.bgImg {
-    flex: 1;
-
-}
-
-.bgImg .img {
-   /* width: 100%; !* Устанавливаем ширину изображения на 100% *!
-    height: auto;*/ /* Автоматический расчет высоты для сохранения пропорций */
+.img {
+    flex-grow: 1;
 
 }
 

@@ -1,9 +1,12 @@
 import s from './Post.module.css'
 import avatar from '../../../../images/avatar.png'
-import {MyPostPropsType} from '../MyPosts'
+import {ProfilePropsType} from '../../Profile'
+import {MainContentPropsType} from '../../../MainContent/MainContent';
+import {AppPropsType} from '../../../../App';
+import {IndexPropsType} from '../../../../index';
 
 
-export const Post = (props: MyPostPropsType) => {
+export const Post = (props: IndexPropsType) => {
 
     return <div className={s.item}>
         <img src={avatar} alt="avatar"/>
