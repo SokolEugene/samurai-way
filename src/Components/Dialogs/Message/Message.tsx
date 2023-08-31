@@ -1,6 +1,5 @@
 import React from 'react';
 import s from '../Dialogs.module.css'
-import {MessageDataPropsType} from '../../../index';
 
 
 export type MessageItemPropsType = {

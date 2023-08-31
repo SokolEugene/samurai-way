@@ -1,6 +1,5 @@
 import s from './Post.module.css'
 import avatar from '../../../../images/avatar.png'
-import {PostDataPropsType} from '../../../../index';
 
 type PostPropsType = {
     message: string

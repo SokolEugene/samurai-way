@@ -2,25 +2,29 @@ import React from 'react';
 import './App.css';
 import {Header} from "./Components/Header/Header";
 import {Footer} from "./Components/Footer/Footer";
-import {MainContent, MainContentPropsType} from './Components/MainContent/MainContent';
-import {DialogDataPropsType, MessageDataPropsType, PostDataPropsType} from './index';
+import {MainContent} from './Components/MainContent/MainContent';
 
-export type AppPropsType = {
-    postData: PostDataPropsType[]
-    dialogsData: DialogDataPropsType[]
-    messagesData:MessageDataPropsType[]
+import {RootStateType} from './Components/redux/state';
+
+export type AppType = {
+    state: RootStateType
 }
+export const App =(props:AppType) => {
 
-export const App =(props:AppPropsType) => {
-
-    return (
+    /*return (
             <div className={"contentWrapper"}>
                 <Header/>
-                <MainContent postData={props.postData} messagesData={props.messagesData} dialogsData={props.dialogsData}/>
+                <MainContent postData={state.profilePage.postData} messagesData={state.dialogsPage.messagesData} dialogsData={state.dialogsPage.dialogsData}/>
                 <Footer/>
             </div>
-
-
+    );
+}*/
+    return (
+        <div className={"contentWrapper"}>
+            <Header/>
+            <MainContent state={props.state}/>
+            <Footer/>
+        </div>
     );
 }
 
