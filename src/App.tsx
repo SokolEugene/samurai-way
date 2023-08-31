@@ -1,25 +1,22 @@
 import React from 'react';
 import './App.css';
 import {Header} from "./Components/Header/Header";
-
 import {Footer} from "./Components/Footer/Footer";
 import {MainContent, MainContentPropsType} from './Components/MainContent/MainContent';
-import {BrowserRouter, Route} from 'react-router-dom';
-import {v1} from 'uuid';
-import {IndexPropsType} from './index';
+import {DialogDataPropsType, MessageDataPropsType, PostDataPropsType} from './index';
 
 export type AppPropsType = {
-    postData: IndexPropsType[]
+    postData: PostDataPropsType[]
+    dialogsData: DialogDataPropsType[]
+    messagesData:MessageDataPropsType[]
 }
 
-
-const App =(props: AppPropsType) => {
+export const App =(props:AppPropsType) => {
 
     return (
-
             <div className={"contentWrapper"}>
                 <Header/>
-                <MainContent postData={props.postData}/>
+                <MainContent postData={props.postData} messagesData={props.messagesData} dialogsData={props.dialogsData}/>
                 <Footer/>
             </div>
 
@@ -27,4 +24,5 @@ const App =(props: AppPropsType) => {
     );
 }
 
-export default App;
+
+
