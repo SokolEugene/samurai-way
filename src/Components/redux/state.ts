@@ -1,4 +1,5 @@
 import {v1} from 'uuid';
+import {renderEntireTree} from '../../render';
 
 
 export type RootStateType = {
@@ -59,20 +60,8 @@ export let state:RootStateType = {
     ]*/
 }
 
-/*
-let postData: PostDataPropsType[] = [
-    {id: v1().slice(0, 8), message: 'It\'s my first post', likeCounts: 27},
-    {id: v1().slice(0, 8), message: 'how are you?', likeCounts: 69},
-]
-let dialogsData: DialogDataPropsType[] = [
-    {id: v1().slice(0, 8), name: 'Eugene'},
-    {id: v1().slice(0, 8), name: 'Vlada'},
-    {id: v1().slice(0, 8), name: 'Lexus'},
-    {id: v1().slice(0, 8), name: 'Nick'},
-]
-let messagesData: MessageDataPropsType[] = [
-    {id: v1().slice(0, 8), message: 'hi'},
-    {id: v1().slice(0, 8), message: 'hey'},
-    {id: v1().slice(0, 8), message: 'hui'},
-    {id: v1().slice(0, 8), message: 'a;sdkj'},
-]*/
+export let addPost = (postMessage: string) => {
+    let newPost = {id: v1().slice(0, 8), message: postMessage, likeCounts: 27}
+    state.profilePage.postData.push(newPost)
+    renderEntireTree(state)
+}
