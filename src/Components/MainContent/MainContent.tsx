@@ -11,26 +11,36 @@ import {RootStateType} from '../redux/state';
 
 export type MainContentPropsType = {
     state: RootStateType
-    addPost:(postMessage: string)=>void
+    addPost: () => void
+    addMessage: () => void
+    updateNewPost: (newText: string) => void
+    updateNewMessage: (newText: string) => void
 }
 
 export const MainContent = (props: MainContentPropsType) => {
     return (
 
-                <div className={s.mainContent}>
-                    <Navbar/>
-                    <div className={s.content}>
-                        <Routes>
-                            <Route path={'/profile'} element={<Profile state={props.state} addPost={props.addPost}/>}/>
-                            <Route path="/dialogs/*" element={<Dialogs state={props.state}/>}/>
-                            <Route path={'/news'} Component={News}/>
-                            <Route path={'/music'} Component={Music}/>
-                            <Route path={'/settings'} Component={Settings}/>
-                        </Routes>
-                    </div>
-                </div>
+        <div className={s.mainContent}>
+            <Navbar/>
+            <div className={s.content}>
+                <Routes>
+                    <Route path={'/profile'}
+                           element={<Profile profilePage={props.state.profilePage}
+                                             addPost={props.addPost}
+                                             updateNewPost={props.updateNewPost}/>}/>
+                    <Route path="/dialogs/*"
+                           element={
+                               <Dialogs addMessage={props.addMessage}
+                                        updateNewMessage={props.updateNewMessage}
+                               dialogsPage={props.state.dialogsPage}/>}/>
+                    <Route path={'/news'} Component={News}/>
+                    <Route path={'/music'} Component={Music}/>
+                    <Route path={'/settings'} Component={Settings}/>
+                </Routes>
+            </div>
+        </div>
 
-        )
+    )
     /*return (
         <BrowserRouter>
             <div className={s.mainContent}>
