@@ -1,6 +1,8 @@
 import {v1} from 'uuid';
-import {renderEntireTree} from '../../render';
-
+/*import {renderEntireTree} from '../../render';*/
+let renderEntireTree = (state:RootStateType) => {
+    console.log('state')
+}
 
 export type RootStateType = {
     profilePage: ProfilePageType
@@ -54,25 +56,29 @@ export let state: RootStateType = {
     }
 }
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {id: v1().slice(0, 8), message: state.profilePage.newPostText, likeCounts: 0}
     state.profilePage.postData.push(newPost)
     state.profilePage.newPostText = ''
     renderEntireTree(state)
 }
 
-export let updateNewPost = (newText: string) => {
+export const updateNewPost = (newText: string) => {
     state.profilePage.newPostText = newText
     renderEntireTree(state)
 }
 
-export let addMessage = () => {
+export const addMessage = () => {
 let newMessage = {id: v1().slice(0, 8), message: state.dialogsPage.newMessageText}
     state.dialogsPage.messagesData.push(newMessage)
     state.dialogsPage.newMessageText = ''
     renderEntireTree(state)
 }
-export let updateNewMessage = (newText: string) => {
+export const updateNewMessage = (newText: string) => {
     state.dialogsPage.newMessageText = newText
     renderEntireTree(state)
+}
+
+export const subscribe = (observer:(state: RootStateType) => void) => {
+    renderEntireTree = observer
 }
