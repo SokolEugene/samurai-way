@@ -1,9 +1,16 @@
 import {v1} from 'uuid';
-/*import {renderEntireTree} from '../../render';*/
-let renderEntireTree = (state:RootStateType) => {
-    console.log('state')
-}
 
+
+export type StoreType = {
+    _state: RootStateType
+    getState: ()=> RootStateType
+    _callSubscriber: (state:RootStateType) => void
+    addPost: () => void
+    updateNewPost: (newText: string) => void
+    addMessage: () => void
+    updateNewMessage: (newText: string) => void
+    subscribe: (observer:(state: RootStateType) => void) => void
+}
 export type RootStateType = {
     profilePage: ProfilePageType
     dialogsPage: DialogsPageType
@@ -31,54 +38,59 @@ export type MessageDataPropsType = {
     message: string
 }
 
-export let state: RootStateType = {
-    profilePage: {
-        postData: [
-            {id: v1().slice(0, 8), message: 'It\'s my first post', likeCounts: 27},
-            {id: v1().slice(0, 8), message: 'how are you?', likeCounts: 69},
-        ],
-        newPostText: ''
+
+export const store: StoreType = {
+    _state: {
+        profilePage: {
+            postData: [
+                {id: v1().slice(0, 8), message: 'It\'s my first post', likeCounts: 27},
+                {id: v1().slice(0, 8), message: 'how are you?', likeCounts: 69},
+            ],
+            newPostText: ''
+        },
+        dialogsPage: {
+            messagesData: [
+                {id: v1().slice(0, 8), message: 'hi'},
+                {id: v1().slice(0, 8), message: 'hey'},
+                {id: v1().slice(0, 8), message: 'hui'},
+                {id: v1().slice(0, 8), message: 'pshe'},
+            ],
+            dialogsData: [
+                {id: v1().slice(0, 8), name: 'Eugene'},
+                {id: v1().slice(0, 8), name: 'Vlada'},
+                {id: v1().slice(0, 8), name: 'Lexus'},
+                {id: v1().slice(0, 8), name: 'Nick'},
+            ],
+            newMessageText: ''
+        }
     },
-    dialogsPage: {
-        messagesData: [
-            {id: v1().slice(0, 8), message: 'hi'},
-            {id: v1().slice(0, 8), message: 'hey'},
-            {id: v1().slice(0, 8), message: 'hui'},
-            {id: v1().slice(0, 8), message: 'pshe'},
-        ],
-        dialogsData: [
-            {id: v1().slice(0, 8), name: 'Eugene'},
-            {id: v1().slice(0, 8), name: 'Vlada'},
-            {id: v1().slice(0, 8), name: 'Lexus'},
-            {id: v1().slice(0, 8), name: 'Nick'},
-        ],
-        newMessageText: ''
+    getState() {
+        return this._state
+    },
+    _callSubscriber() {
+        console.log('state')},
+
+    addPost() {
+        let newPost = {id: v1().slice(0, 8), message: this._state.profilePage.newPostText, likeCounts: 0}
+        this._state.profilePage.postData.push(newPost)
+        this._state.profilePage.newPostText = ''
+        this._callSubscriber(this._state)
+    },
+    updateNewPost(newText) {
+        this._state.profilePage.newPostText = newText
+        this._callSubscriber(this._state)
+    },
+    addMessage()  {
+        let newMessage = {id: v1().slice(0, 8), message: this._state.dialogsPage.newMessageText}
+        this._state.dialogsPage.messagesData.push(newMessage)
+        this._state.dialogsPage.newMessageText = ''
+        this._callSubscriber(this._state)
+    },
+    updateNewMessage(newText)  {
+        this._state.dialogsPage.newMessageText = newText
+        this._callSubscriber(this._state)
+    },
+    subscribe(observer)  {
+        this._callSubscriber = observer
     }
-}
-
-export const addPost = () => {
-    let newPost = {id: v1().slice(0, 8), message: state.profilePage.newPostText, likeCounts: 0}
-    state.profilePage.postData.push(newPost)
-    state.profilePage.newPostText = ''
-    renderEntireTree(state)
-}
-
-export const updateNewPost = (newText: string) => {
-    state.profilePage.newPostText = newText
-    renderEntireTree(state)
-}
-
-export const addMessage = () => {
-let newMessage = {id: v1().slice(0, 8), message: state.dialogsPage.newMessageText}
-    state.dialogsPage.messagesData.push(newMessage)
-    state.dialogsPage.newMessageText = ''
-    renderEntireTree(state)
-}
-export const updateNewMessage = (newText: string) => {
-    state.dialogsPage.newMessageText = newText
-    renderEntireTree(state)
-}
-
-export const subscribe = (observer:(state: RootStateType) => void) => {
-    renderEntireTree = observer
 }
