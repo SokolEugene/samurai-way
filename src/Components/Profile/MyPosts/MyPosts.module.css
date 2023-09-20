@@ -1,13 +1,6 @@
-.content {
-    flex: 10;
-    background-color: green;
+.postsBlock {
+    padding: 10px 10px 10px 15px;
 }
-
-.bgImg {
-    width: 100%;
-}
-
-.bgImg img {
-    width: 100%;
-
+.posts {
+    margin: 10px 0 0 0;
 }

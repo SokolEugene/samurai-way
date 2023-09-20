@@ -1,16 +1,20 @@
-import bgImg from '../../images/bg-img.jpg'
-import s from './Profile.module.css'
-import {MyPosts} from './MyPosts/MyPosts';
+import { MyPosts} from './MyPosts/MyPosts';
+import {ProfileInfo} from './ProfileInfo/ProfileInfo';
+import {ProfilePageType} from '../redux/state';
 
-export const Profile = () => {
+export type ProfilePropsType = {
+    profilePage: ProfilePageType
+    addPost: () => void
+    updateNewPost: (newText: string) => void
+}
+
+export const Profile = (props: ProfilePropsType) => {
+
+
     return (
-        <div /*className={s.content}*/>
-            <div className={s.bgImg}><img src={bgImg}/></div>
-            <div className={s.posts}>
-                <div>
-                    ava + description
-                </div>
-                <MyPosts/></div>
+        <div className={"profileContent"}>
+            <ProfileInfo/>
+            <MyPosts profilePage={props.profilePage} addPost={props.addPost} updateNewPost={props.updateNewPost}/>
         </div>
     )
 }

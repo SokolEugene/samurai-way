@@ -1,3 +1,6 @@
-.dialogs{
+.dialogs {
+    display: flex;
+    flex: 1;
     padding: 10px 10px 10px 15px;
+    background-color: #138815;
 }
