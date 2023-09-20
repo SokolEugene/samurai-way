@@ -1,0 +1,15 @@
+.profileInfo {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    position: relative;
+}
+.description {
+    padding: 10px 10px 10px 15px;
+}
+
+.img {
+    flex-grow: 1;
+
+}
+

@@ -1,0 +1,17 @@
+.navbar {
+    flex: 1;
+    background-color: #06a511;
+    min-width: 155px;
+    max-width: 200px;
+    padding: 10px 10px 10px 15px;
+}
+
+.item {
+    color: rgba(232,232,238,0.96);
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+.item .active {
+    color: white;
+    text-decoration: none;
+}
