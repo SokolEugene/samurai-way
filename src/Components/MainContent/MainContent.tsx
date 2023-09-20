@@ -7,14 +7,15 @@ import {Route, Routes} from 'react-router-dom';
 import {News} from '../News/News';
 import {Music} from '../Music/Music';
 import {Settings} from '../Settings/Settings';
-import {RootStateType} from '../redux/state';
+import {ActionsTypes, RootStateType, } from '../redux/state';
 
 export type MainContentPropsType = {
     state: RootStateType
-    addPost: () => void
+    dispatch: (action: ActionsTypes) => void
+    /*addPost: () => void
     addMessage: () => void
     updateNewPost: (newText: string) => void
-    updateNewMessage: (newText: string) => void
+    updateNewMessage: (newText: string) => void*/
 }
 
 export const MainContent = (props: MainContentPropsType) => {
@@ -26,12 +27,10 @@ export const MainContent = (props: MainContentPropsType) => {
                 <Routes>
                     <Route path={'/profile'}
                            element={<Profile profilePage={props.state.profilePage}
-                                             addPost={props.addPost}
-                                             updateNewPost={props.updateNewPost}/>}/>
+                                             dispatch={props.dispatch}/>}/>
                     <Route path="/dialogs/*"
                            element={
-                               <Dialogs addMessage={props.addMessage}
-                                        updateNewMessage={props.updateNewMessage}
+                               <Dialogs dispatch={props.dispatch}
                                dialogsPage={props.state.dialogsPage}/>}/>
                     <Route path={'/news'} Component={News}/>
                     <Route path={'/music'} Component={Music}/>

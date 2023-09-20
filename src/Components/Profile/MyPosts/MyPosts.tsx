@@ -1,25 +1,24 @@
 import s from './MyPosts.module.css'
 import {Post} from './Post/Post';
-import {ProfilePageType} from '../../redux/state';
+import {ActionsTypes, ProfilePageType} from '../../redux/state';
 import React, {useRef} from 'react';
 
 export type MyPostPropsType = {
     profilePage: ProfilePageType
-    addPost: () => void
-    updateNewPost: (newText: string) => void
+    dispatch: (action: ActionsTypes) => void
 }
 
 export const MyPosts = (props: MyPostPropsType) => {
     let newPostEl = useRef<HTMLTextAreaElement>(null)
 
     let onClickHandler = () => {
-            props.addPost();
+            props.dispatch({type: "ADD-POST"} );
         }
 
     let onPostChange = () => {
         if (newPostEl.current !== null) {
             let text = newPostEl.current.value;
-            props.updateNewPost(text)
+            props.dispatch({type: "UPDATE-NEW-POST-TEXT", newText: text})
         }
     }
 
