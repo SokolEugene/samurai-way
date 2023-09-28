@@ -1,4 +1,7 @@
 import {v1} from 'uuid';
+import {profileReducer} from "./profile-reducer";
+import {dialogsReducer} from "./dialogs-reducer";
+import {navbarReducer} from "./navbar-reducer";
 
 
 export type StoreType = {
@@ -7,10 +10,7 @@ export type StoreType = {
     subscribe: (observer: (state: RootStateType) => void) => void
     _callSubscriber: (state: RootStateType) => void
     dispatch: (action: ActionsTypes) => void
-    /*addPost: () => void
-    updateNewPost: (newText: string) => void
-    addMessage: () => void
-    updateNewMessage: (newText: string) => void*/
+
 }
 export type RootStateType = {
     profilePage: ProfilePageType
@@ -39,10 +39,15 @@ export type MessageDataPropsType = {
     message: string
 }
 
-export type ActionsTypes = AddPostActionType | AddMessageActionType | UpdateNewPostActionType | UpdateNewMessageActionType
+export type ActionsTypes =
+    AddPostActionType
+    | AddMessageActionType
+    | UpdateNewPostActionType
+    | UpdateNewMessageActionType
 export type AddPostActionType = {
     type: "ADD-POST"
 }
+//export type AddPostActionType = ReturnType<typeof addPostAC> // автоматическая типизация
 export type AddMessageActionType = {
     type: "ADD-MESSAGE"
 }
@@ -54,21 +59,8 @@ export type UpdateNewMessageActionType = {
     type: "UPDATE-NEW-MESSAGE-TEXT"
     newText: string
 }
-export const addPostAC = ():AddPostActionType => {
-        return {
-            type: "ADD-POST"
-        }
-    };
 
-    export const updateNewPostTextAC = (text: string):UpdateNewPostActionType => {
-    return {
-        type: "UPDATE-NEW-POST-TEXT",
-        newText: text
-    }
-};
-    export const updateNewMessageTextAC = (text: string):UpdateNewMessageActionType =>
-        ({type: "UPDATE-NEW-MESSAGE-TEXT", newText:text})
-export const addMessageAC = ():AddMessageActionType => ({type: "ADD-MESSAGE"})
+
 export const store: StoreType = {
     _state: {
         profilePage: {
@@ -103,8 +95,13 @@ export const store: StoreType = {
     subscribe(observer) {
         this._callSubscriber = observer
     },
-    dispatch(action) {
-        if (action.type === "ADD-POST") {
+    dispatch(action: ActionsTypes) {
+
+        this._state = profileReducer(this._state, action)
+        this._state = dialogsReducer(this._state, action)
+        //this._state.navbar = navbarReducer(this._state.profilePage, action)
+        this._callSubscriber(this._state);
+       /* if (action.type === "ADD-POST") {
             let newPost = {id: v1().slice(0, 8), message: this._state.profilePage.newPostText, likeCounts: 0}
             this._state.profilePage.postData.push(newPost)
             this._state.profilePage.newPostText = ''
@@ -120,29 +117,6 @@ export const store: StoreType = {
         } else if (action.type === "UPDATE-NEW-MESSAGE-TEXT") {
             this._state.dialogsPage.newMessageText = action.newText
             this._callSubscriber(this._state)
-        }
+        }*/
     }
-
-
-    /*addPost() {
-        let newPost = {id: v1().slice(0, 8), message: this._state.profilePage.newPostText, likeCounts: 0}
-        this._state.profilePage.postData.push(newPost)
-        this._state.profilePage.newPostText = ''
-        this._callSubscriber(this._state)
-    },*/
-    /*updateNewPost(newText) {
-        this._state.profilePage.newPostText = newText
-        this._callSubscriber(this._state)
-    },*/
-    /*addMessage()  {
-        let newMessage = {id: v1().slice(0, 8), message: this._state.dialogsPage.newMessageText}
-        this._state.dialogsPage.messagesData.push(newMessage)
-        this._state.dialogsPage.newMessageText = ''
-        this._callSubscriber(this._state)
-    },*/
-    /*updateNewMessage(newText)  {
-        this._state.dialogsPage.newMessageText = newText
-        this._callSubscriber(this._state)
-    },*/
-
 }
