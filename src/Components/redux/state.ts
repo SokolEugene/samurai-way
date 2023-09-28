@@ -40,20 +40,32 @@ export type MessageDataPropsType = {
 }
 
 export type ActionsTypes = AddPostActionType | AddMessageActionType | UpdateNewPostActionType | UpdateNewMessageActionType
-type AddPostActionType = {
+export type AddPostActionType = {
     type: "ADD-POST"
 }
-type AddMessageActionType = {
+export type AddMessageActionType = {
     type: "ADD-MESSAGE"
 }
-type UpdateNewPostActionType = {
+export type UpdateNewPostActionType = {
     type: "UPDATE-NEW-POST-TEXT"
     newText: string
 }
-type UpdateNewMessageActionType = {
+export type UpdateNewMessageActionType = {
     type: "UPDATE-NEW-MESSAGE-TEXT"
     newText: string
 }
+export const addPostAC = ():AddPostActionType => {
+        return {
+            type: "ADD-POST"
+        }
+    };
+
+    export const updateNewPostTextAC = (text: string):UpdateNewPostActionType => {
+    return {
+        type: "UPDATE-NEW-POST-TEXT",
+        newText: text
+    }
+};
 export const store: StoreType = {
     _state: {
         profilePage: {
@@ -107,6 +119,7 @@ export const store: StoreType = {
             this._callSubscriber(this._state)
         }
     }
+
 
     /*addPost() {
         let newPost = {id: v1().slice(0, 8), message: this._state.profilePage.newPostText, likeCounts: 0}
