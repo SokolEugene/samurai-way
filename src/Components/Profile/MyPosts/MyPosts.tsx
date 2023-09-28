@@ -32,8 +32,8 @@ export const MyPosts = (props: MyPostPropsType) => {
     let onPostChange = () => {
         if (newPostEl.current !== null) {
             let text = newPostEl.current.value;
-            let action = updateNewPostTextAC(text)
-            props.dispatch(action)
+            //let action = updateNewPostTextAC(text)
+            props.dispatch(updateNewPostTextAC(text))
         }
     }
 

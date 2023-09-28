@@ -66,6 +66,9 @@ export const addPostAC = ():AddPostActionType => {
         newText: text
     }
 };
+    export const updateNewMessageTextAC = (text: string):UpdateNewMessageActionType =>
+        ({type: "UPDATE-NEW-MESSAGE-TEXT", newText:text})
+export const addMessageAC = ():AddMessageActionType => ({type: "ADD-MESSAGE"})
 export const store: StoreType = {
     _state: {
         profilePage: {

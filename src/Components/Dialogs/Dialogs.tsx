@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import s from './Dialogs.module.css'
 import {DialogItem} from './DialogItem/DialogItem'
 import {Message} from './Message/Message'
-import {ActionsTypes, DialogsPageType} from '../redux/state';
+import {ActionsTypes, addMessageAC, DialogsPageType, updateNewMessageTextAC} from '../redux/state';
 
 export type DialogPropsType = {
     dialogsPage: DialogsPageType
@@ -14,12 +14,13 @@ export const Dialogs = (props: DialogPropsType) => {
 
     let newMessageEl = useRef<HTMLTextAreaElement>(null)
     let onClickHandler = () => {
-        props.dispatch({type: "ADD-MESSAGE"});
+        props.dispatch(addMessageAC());
     }
     let onMessageChange = () => {
         if (newMessageEl.current !== null) {
             let text = newMessageEl.current.value;
-            props.dispatch({type: "UPDATE-NEW-MESSAGE-TEXT", newText:text})
+            //let action = updateNewMessageTextAC(text)
+            props.dispatch(updateNewMessageTextAC(text))
         }
     }
 
@@ -31,7 +32,7 @@ export const Dialogs = (props: DialogPropsType) => {
         <div className={s.dialogs}>
             <div className={s.dialogsItems}> {dialogsElements} </div>
             <div className={s.messagesElements}>
-                {messagesElements}
+                <div>{messagesElements}</div>
                 <div>
                 <textarea onChange={onMessageChange}
                           ref={newMessageEl}
