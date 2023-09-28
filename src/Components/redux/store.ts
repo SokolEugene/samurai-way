@@ -1,66 +1,66 @@
-import {v1} from 'uuid';
-import {profileReducer} from "./profile-reducer";
-import {dialogsReducer} from "./dialogs-reducer";
-import {navbarReducer} from "./navbar-reducer";
+export {};
+// import {v1} from 'uuid';
+// import {profileReducer} from "./profile-reducer";
+// import {dialogsReducer} from "./dialogs-reducer";
+// import {navbarReducer} from "./navbar-reducer";
 
+// export type StoreType = {
+//     _state: RootStateType
+//     getState: () => RootStateType
+//     subscribe: (observer: (state: RootStateType) => void) => void
+//     _callSubscriber: (state: RootStateType) => void
+//     dispatch: (action: ActionsTypes) => void
+//
+// }
+// export type RootStateType = {
+//     profilePage: ProfilePageType
+//     dialogsPage: DialogsPageType
+// }
+// export type ProfilePageType = {
+//     postData: PostDataPropsType[]
+//     newPostText: string
+// }
+// export type DialogsPageType = {
+//     newMessageText: string
+//     messagesData: MessageDataPropsType[]
+//     dialogsData: DialogDataPropsType[]
+// }
+// export type PostDataPropsType = {
+//     id: string
+//     message: string
+//     likeCounts: number
+// }
+// export type DialogDataPropsType = {
+//     id: string
+//     name: string
+// }
+// export type MessageDataPropsType = {
+//     id: string
+//     message: string
+// }
+//
+// export type ActionsTypes =
+//     AddPostActionType
+//     | AddMessageActionType
+//     | UpdateNewPostActionType
+//     | UpdateNewMessageActionType
+// export type AddPostActionType = {
+//     type: "ADD-POST"
+// }
+// //export type AddPostActionType = ReturnType<typeof addPostAC> // автоматическая типизация
+// export type AddMessageActionType = {
+//     type: "ADD-MESSAGE"
+// }
+// export type UpdateNewPostActionType = {
+//     type: "UPDATE-NEW-POST-TEXT"
+//     newText: string
+// }
+// export type UpdateNewMessageActionType = {
+//     type: "UPDATE-NEW-MESSAGE-TEXT"
+//     newText: string
+// }
 
-export type StoreType = {
-    _state: RootStateType
-    getState: () => RootStateType
-    subscribe: (observer: (state: RootStateType) => void) => void
-    _callSubscriber: (state: RootStateType) => void
-    dispatch: (action: ActionsTypes) => void
-
-}
-export type RootStateType = {
-    profilePage: ProfilePageType
-    dialogsPage: DialogsPageType
-}
-export type ProfilePageType = {
-    postData: PostDataPropsType[]
-    newPostText: string
-}
-export type DialogsPageType = {
-    newMessageText: string
-    messagesData: MessageDataPropsType[]
-    dialogsData: DialogDataPropsType[]
-}
-export type PostDataPropsType = {
-    id: string
-    message: string
-    likeCounts: number
-}
-export type DialogDataPropsType = {
-    id: string
-    name: string
-}
-export type MessageDataPropsType = {
-    id: string
-    message: string
-}
-
-export type ActionsTypes =
-    AddPostActionType
-    | AddMessageActionType
-    | UpdateNewPostActionType
-    | UpdateNewMessageActionType
-export type AddPostActionType = {
-    type: "ADD-POST"
-}
-//export type AddPostActionType = ReturnType<typeof addPostAC> // автоматическая типизация
-export type AddMessageActionType = {
-    type: "ADD-MESSAGE"
-}
-export type UpdateNewPostActionType = {
-    type: "UPDATE-NEW-POST-TEXT"
-    newText: string
-}
-export type UpdateNewMessageActionType = {
-    type: "UPDATE-NEW-MESSAGE-TEXT"
-    newText: string
-}
-
-
+/*
 export const store: StoreType = {
     _state: {
         profilePage: {
@@ -101,7 +101,7 @@ export const store: StoreType = {
         this._state = dialogsReducer(this._state, action)
         //this._state.navbar = navbarReducer(this._state.profilePage, action)
         this._callSubscriber(this._state);
-       /* if (action.type === "ADD-POST") {
+       /!* if (action.type === "ADD-POST") {
             let newPost = {id: v1().slice(0, 8), message: this._state.profilePage.newPostText, likeCounts: 0}
             this._state.profilePage.postData.push(newPost)
             this._state.profilePage.newPostText = ''
@@ -117,6 +117,6 @@ export const store: StoreType = {
         } else if (action.type === "UPDATE-NEW-MESSAGE-TEXT") {
             this._state.dialogsPage.newMessageText = action.newText
             this._callSubscriber(this._state)
-        }*/
+        }*!/
     }
-}
+}*/

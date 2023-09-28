@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
-import {RootStateType, store} from './Components/redux/state';
+import {store} from './Components/redux/redux-store';
+import {RootStateType} from './Components/redux/redux-store';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {App} from './App';
@@ -16,4 +17,6 @@ let renderEntireTree = (state: RootStateType ) => {
 
 renderEntireTree(store.getState())
 
-store.subscribe(renderEntireTree);
+store.subscribe(()=>{
+    renderEntireTree(store.getState())
+});

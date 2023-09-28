@@ -1,15 +1,31 @@
-import {ActionsTypes, AddMessageActionType, RootStateType, UpdateNewMessageActionType} from "./state";
+import {ActionsTypes, AddMessageActionType, DialogsPageType, UpdateNewMessageActionType} from "./redux-store";
 import {v1} from "uuid";
 
-export const dialogsReducer = (state: RootStateType, action: ActionsTypes) => {
+const initialState: DialogsPageType = {
+    messagesData: [
+        {id: v1().slice(0, 8), message: 'hi'},
+        {id: v1().slice(0, 8), message: 'hey'},
+        {id: v1().slice(0, 8), message: 'hui'},
+        {id: v1().slice(0, 8), message: 'pshe'},
+    ],
+    dialogsData: [
+        {id: v1().slice(0, 8), name: 'Eugene'},
+        {id: v1().slice(0, 8), name: 'Vlada'},
+        {id: v1().slice(0, 8), name: 'Lexus'},
+        {id: v1().slice(0, 8), name: 'Nick'},
+    ],
+    newMessageText: ''
+}
+
+export const dialogsReducer = (state: DialogsPageType = initialState, action: ActionsTypes) => {
     switch (action.type) {
         case "ADD-MESSAGE":
-            let newMessage = {id: v1().slice(0, 8), message: state.dialogsPage.newMessageText}
-            state.dialogsPage.messagesData.push(newMessage)
-            state.dialogsPage.newMessageText = ''
+            let newMessage = {id: v1().slice(0, 8), message: state.newMessageText}
+            state.messagesData.push(newMessage)
+            state.newMessageText = ''
             return state;
         case "UPDATE-NEW-MESSAGE-TEXT":
-            state.dialogsPage.newMessageText = action.newText
+            state.newMessageText = action.newText
             return state;
         default:
             return state

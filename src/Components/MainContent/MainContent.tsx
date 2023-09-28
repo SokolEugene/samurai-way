@@ -7,7 +7,7 @@ import {Route, Routes} from 'react-router-dom';
 import {News} from '../News/News';
 import {Music} from '../Music/Music';
 import {Settings} from '../Settings/Settings';
-import {ActionsTypes, RootStateType, } from '../redux/state';
+import {ActionsTypes, RootStateType, } from '../redux/redux-store';
 
 export type MainContentPropsType = {
     state: RootStateType
