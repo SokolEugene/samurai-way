@@ -12,7 +12,7 @@ export type DialogPropsType = {
 
 
 export const Dialogs = (props: DialogPropsType) => {
-
+debugger
     let newMessageEl = useRef<HTMLTextAreaElement>(null)
     let onClickHandler = () => {
         props.dispatch(addMessageAC());

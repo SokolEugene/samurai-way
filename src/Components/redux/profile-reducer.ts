@@ -1,7 +1,7 @@
 import {v1} from "uuid";
 import {ActionsTypes, AddPostActionType, ProfilePageType, UpdateNewPostActionType} from "./redux-store";
 
-const initialState = {
+const initialState: ProfilePageType = {
         postData: [
             {id: v1().slice(0, 8), message: 'It\'s my first post', likeCounts: 27},
             {id: v1().slice(0, 8), message: 'how are you?', likeCounts: 69},

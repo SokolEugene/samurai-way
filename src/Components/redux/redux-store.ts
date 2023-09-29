@@ -62,6 +62,8 @@ export type UpdateNewMessageActionType = {
 
 let reducers = combineReducers({
     profilePage: profileReducer,
-    dialogPage: dialogsReducer
+    dialogsPage: dialogsReducer,
 });
+
+
 export const store:StoreType = createStore(reducers);

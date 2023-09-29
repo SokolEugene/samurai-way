@@ -19,6 +19,8 @@ export type MainContentPropsType = {
 }
 
 export const MainContent = (props: MainContentPropsType) => {
+
+
     return (
 
         <div className={s.mainContent}>
