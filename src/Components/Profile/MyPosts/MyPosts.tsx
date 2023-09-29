@@ -11,12 +11,9 @@ export type MyPostPropsType = {
 
 export const MyPosts = (props: MyPostPropsType) => {
 
-
-
     let newPostEl = useRef<HTMLTextAreaElement>(null)
 
     let onClickHandler = () => {
-        // props.dispatch(addPostAC() );
         props.addPost()
     }
 

@@ -1,15 +1,11 @@
-import React, {useRef} from 'react';
-import s from './Dialogs.module.css'
-import {DialogItem} from './DialogItem/DialogItem'
-import {Message} from './Message/Message'
-import {ActionsTypes, DialogsPageType, StoreType} from '../redux/redux-store';
+import React from 'react';
+import {StoreType} from '../redux/redux-store';
 import {addMessageAC, updateNewMessageTextAC} from "../redux/dialogs-reducer";
 import {Dialogs} from "./Dialogs";
 
 export type DialogPropsType = {
     store: StoreType
 }
-
 
 export const DialogsContainer = (props: DialogPropsType) => {
 

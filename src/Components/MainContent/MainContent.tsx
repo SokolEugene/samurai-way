@@ -2,7 +2,6 @@ import React from 'react';
 import s from './MainContent.module.css'
 import {Navbar} from '../Navbar/Navbar';
 import {Profile} from '../Profile/Profile';
-import {Dialogs} from '../Dialogs/Dialogs';
 import {Route, Routes} from 'react-router-dom';
 import {News} from '../News/News';
 import {Music} from '../Music/Music';
@@ -14,10 +13,6 @@ export type MainContentPropsType = {
     state: RootStateType
     dispatch: (action: ActionsTypes) => void
     store: StoreType
-    /*addPost: () => void
-    addMessage: () => void
-    updateNewPost: (newText: string) => void
-    updateNewMessage: (newText: string) => void*/
 }
 
 export const MainContent = (props: MainContentPropsType) => {
@@ -42,20 +37,4 @@ export const MainContent = (props: MainContentPropsType) => {
         </div>
 
     )
-    /*return (
-        <BrowserRouter>
-            <div className={s.mainContent}>
-                <Navbar/>
-                <div className={s.content}>
-                    <Routes>
-                        <Route path={'/profile'} element={<Profile postData={props.postData}/>}/>
-                        <Route path="/dialogs/!*" element={<Dialogs dialogsData={props.dialogsData} messagesData={props.messagesData}/>}/>
-                        <Route path={'/news'} Component={News}/>
-                        <Route path={'/music'} Component={Music}/>
-                        <Route path={'/settings'} Component={Settings}/>
-                    </Routes>
-                </div>
-            </div>
-        </BrowserRouter>
-    )*/
 }

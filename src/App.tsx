@@ -12,7 +12,6 @@ export type AppType = {
     store: StoreType
 }
 
-
 export const App = (props: AppType) => {
     debugger
     return (

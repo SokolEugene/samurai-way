@@ -8,7 +8,6 @@ export type StoreType = {
     subscribe: (observer: (state: RootStateType) => void) => void
     _callSubscriber: (state: RootStateType) => void
     dispatch: (action: ActionsTypes) => void
-
 }
 export type RootStateType = {
     profilePage: ProfilePageType
@@ -58,12 +57,9 @@ export type UpdateNewMessageActionType = {
     newText: string
 }
 
-
-
 let reducers = combineReducers({
     profilePage: profileReducer,
     dialogsPage: dialogsReducer,
 });
-
 
 export const store:StoreType = createStore(reducers);

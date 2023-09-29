@@ -2,15 +2,13 @@ import React, {useRef} from 'react';
 import s from './Dialogs.module.css'
 import {DialogItem} from './DialogItem/DialogItem'
 import {Message} from './Message/Message'
-import {ActionsTypes, DialogsPageType} from '../redux/redux-store';
-import {addMessageAC, updateNewMessageTextAC} from "../redux/dialogs-reducer";
+import {DialogsPageType} from '../redux/redux-store';
 
 export type DialogPropsType = {
     dialogsPage: DialogsPageType
     addMessage: () => void
-    updateNewMessageText: (text:string) => void
+    updateNewMessageText: (text: string) => void
 }
-
 
 export const Dialogs = (props: DialogPropsType) => {
     let newMessageEl = useRef<HTMLTextAreaElement>(null)
