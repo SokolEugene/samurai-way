@@ -7,28 +7,28 @@ import {addMessageAC, updateNewMessageTextAC} from "../redux/dialogs-reducer";
 
 export type DialogPropsType = {
     dialogsPage: DialogsPageType
-    dispatch: (action: ActionsTypes) => void
+    addMessage: () => void
+    updateNewMessageText: (text:string) => void
 }
 
 
 export const Dialogs = (props: DialogPropsType) => {
-debugger
     let newMessageEl = useRef<HTMLTextAreaElement>(null)
     let onClickHandler = () => {
-        props.dispatch(addMessageAC());
+        props.addMessage()
     }
     let onMessageChange = () => {
         if (newMessageEl.current !== null) {
             let text = newMessageEl.current.value;
-            //let action = updateNewMessageTextAC(text)
-            props.dispatch(updateNewMessageTextAC(text))
+            props.updateNewMessageText(text)
         }
     }
 
     let dialogsElements = props.dialogsPage.dialogsData.map(el => <DialogItem
         name={el.name}
         id={el.id}/>);
-    let messagesElements = props.dialogsPage.messagesData.map(el => <Message message={el.message} id={el.id}/>)
+    let messagesElements = props.dialogsPage.messagesData.map(el =>
+        <Message message={el.message} id={el.id}/>)
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}> {dialogsElements} </div>

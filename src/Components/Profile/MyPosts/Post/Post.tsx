@@ -8,7 +8,7 @@ type PostPropsType = {
 }
 
 export const Post = (props: PostPropsType) => {
-
+debugger
     return <div className={s.item}>
         <img src={avatar} alt="avatar"/>
         <a>{props.message}</a>
