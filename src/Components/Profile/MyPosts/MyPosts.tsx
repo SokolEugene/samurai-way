@@ -23,7 +23,8 @@ export const MyPosts = (props: MyPostsPropsType) => {
     let myPostElements = props.profilePage.postData.map(el =>
         <Post message={el.message}
               likeCounts={el.likeCounts}
-              id={el.id}/>)
+              id={el.id}
+        key={el.id}/>)
     return (
         <div className={s.postsBlock}>
             <p>My Posts</p>
