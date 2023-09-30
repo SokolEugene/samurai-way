@@ -6,13 +6,12 @@ import {Route, Routes} from 'react-router-dom';
 import {News} from '../News/News';
 import {Music} from '../Music/Music';
 import {Settings} from '../Settings/Settings';
-import {ActionsTypes, RootStateType, StoreType,} from '../redux/redux-store';
 import {DialogsContainer} from "../Dialogs/DialogsContainer";
 
 export type MainContentPropsType = {
-    state: RootStateType
-    dispatch: (action: ActionsTypes) => void
-    store: StoreType
+    // state: RootStateType
+    // dispatch: (action: ActionsTypes) => void
+    // store: StoreType
 }
 
 export const MainContent = (props: MainContentPropsType) => {
@@ -25,10 +24,10 @@ export const MainContent = (props: MainContentPropsType) => {
             <div className={s.content}>
                 <Routes>
                     <Route path={'/profile'}
-                           element={<Profile store={props.store} />}/>
+                           element={<Profile/* store={props.store} *//>}/>
                     <Route path="/dialogs/*"
                            element={
-                               <DialogsContainer store={props.store} />}/>
+                               <DialogsContainer />}/>
                     <Route path={'/news'} Component={News}/>
                     <Route path={'/music'} Component={Music}/>
                     <Route path={'/settings'} Component={Settings}/>

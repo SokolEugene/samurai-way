@@ -2,15 +2,10 @@ import React, {useRef} from 'react';
 import s from './Dialogs.module.css'
 import {DialogItem} from './DialogItem/DialogItem'
 import {Message} from './Message/Message'
-import {DialogsPageType} from '../redux/redux-store';
+import {DialogsPropsType} from "./DialogsContainer";
 
-export type DialogPropsType = {
-    dialogsPage: DialogsPageType
-    addMessage: () => void
-    updateNewMessageText: (text: string) => void
-}
 
-export const Dialogs = (props: DialogPropsType) => {
+export const Dialogs = (props: DialogsPropsType) => {
     let newMessageEl = useRef<HTMLTextAreaElement>(null)
     let onClickHandler = () => {
         props.addMessage()

@@ -1,15 +1,11 @@
 import s from './MyPosts.module.css'
 import {Post} from './Post/Post';
-import { ProfilePageType} from '../../redux/redux-store';
 import React, {useRef} from 'react';
+import {MyPostsPropsType} from "./MyPostsContainer";
 
-export type MyPostPropsType = {
-    profilePage: ProfilePageType
-    addPost: () => void
-    updateNewPostText: (text: string) => void
-}
 
-export const MyPosts = (props: MyPostPropsType) => {
+
+export const MyPosts = (props: MyPostsPropsType) => {
 
     let newPostEl = useRef<HTMLTextAreaElement>(null)
 

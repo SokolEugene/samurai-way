@@ -1,5 +1,5 @@
-import {ActionsTypes, RootStateType} from "./redux-store";
+import {ActionsTypes} from "./redux-store";
 
-export const navbarReducer = (state:RootStateType, action: ActionsTypes) => {
+export const navbarReducer = (state: any, action: ActionsTypes) => {
     return state
 }
