@@ -43,7 +43,7 @@ export const profileReducer = (state: InitialStateType = initialState, action: A
             return state
     }
 }
-export const addPostAC = ():AddPostActionType => {
+export const addPostAC = (): AddPostActionType => {
     return {
         type: "ADD-POST"
     }

@@ -1,7 +1,7 @@
-import {addPostAC, profileReducer, updateNewPostTextAC} from "./profile-reducer";
-import {addMessageAC, dialogsReducer, updateNewMessageTextAC} from "./dialogs-reducer";
+import {AddPostActionType, profileReducer, UpdateNewPostActionType} from "./profile-reducer";
+import {AddMessageActionType, dialogsReducer, UpdateNewMessageActionType} from "./dialogs-reducer";
 import {combineReducers, createStore} from "redux";
-
+import {FollowActionType, SetUsersActionType, UnfollowActionType, usersReducer} from "./users-reducer";
 
 
 export type ActionsTypes =
@@ -9,28 +9,27 @@ export type ActionsTypes =
     | AddMessageActionType
     | UpdateNewPostActionType
     | UpdateNewMessageActionType
+    | FollowActionType
+    | UnfollowActionType
+    | SetUsersActionType
 
-export type AddPostActionType = ReturnType<typeof addPostAC>// автоматическая типизация
-export type UpdateNewPostActionType = ReturnType<typeof updateNewPostTextAC>// автоматическая типизация
-export type AddMessageActionType = ReturnType<typeof addMessageAC>// автоматическая типизация
-export type UpdateNewMessageActionType = ReturnType<typeof updateNewMessageTextAC>// автоматическая типизация
-
+// export type AddPostActionType = ReturnType<typeof addPostAC>// автоматическая типизация
+// export type UpdateNewPostActionType = ReturnType<typeof updateNewPostTextAC>// автоматическая типизация
+// export type AddMessageActionType = ReturnType<typeof addMessageAC>// автоматическая типизация
+// export type UpdateNewMessageActionType = ReturnType<typeof updateNewMessageTextAC>// автоматическая типизация
+// export type FollowActionType = ReturnType<typeof followAC>
+// export type UnfollowActionType = ReturnType<typeof unfollowAC>
+// export type SetUsersActionType = ReturnType<typeof setUsersAC>
 
 export const rootReducer = combineReducers({
     profilePage: profileReducer,
     dialogsPage: dialogsReducer,
+    usersPage: usersReducer
 });
 
 
 export type AppStateType = ReturnType<typeof rootReducer> // автоматическая типизация
 export const store = createStore(rootReducer);
-
-
-
-
-
-
-
 
 
 /*export type StoreType = {
@@ -80,4 +79,18 @@ export type MessageDataPropsType = {
 /*export type UpdateNewMessageActionType = {
     type: "UPDATE-NEW-MESSAGE-TEXT"
     newText: string
+}*/
+/*
+export type FollowActionType = {
+    type: "FOLLOW"
+    userId: string
+}
+export type UnfollowActionType = {
+    type: "UNFOLLOW"
+    userId: string
+}
+export type SetUsersActionType = {
+    type: "SET_USERS"
+    users: UserType[]
+
 }*/

@@ -5,9 +5,9 @@ export type AddMessageActionType = {
     type: "ADD-MESSAGE"
 }
 export type DialogsPageType = {
-    newMessageText: string
     messagesData: MessageDataPropsType[]
     dialogsData: DialogDataPropsType[]
+    newMessageText: string
 }
 export type DialogDataPropsType = {
     id: string
