@@ -1,4 +1,4 @@
-import {v1} from "uuid";
+//import {v1} from "uuid";
 import {ActionsTypes} from "./redux-store";
 
 
@@ -19,7 +19,7 @@ type InitialStateType = {
     users: UserType[]
 }
 const initialState: InitialStateType = {
-    users: [
+    users: [/*
         {
             userId: v1().slice(0, 8),
             followed: false,
@@ -41,7 +41,7 @@ const initialState: InitialStateType = {
             userStatus: "27",
             location: {country: "Belarus", city: "Vtb"}
         },
-    ]
+    */]
 }
 export type FollowActionType = {
     type: "FOLLOW"
