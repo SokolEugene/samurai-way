@@ -3,10 +3,14 @@ import {ActionsTypes} from "./redux-store";
 
 
 export type UserType = {
-    userId: string
+    id: string
     followed: boolean
-    userName: string
-    userStatus: string
+    name: string
+    status: string
+    photos: {
+        small: string | null
+        large: string | null
+    }
     location: {
         country: string
         city: string
@@ -62,11 +66,11 @@ export const usersReducer = (state: InitialStateType = initialState, action: Act
     switch (action.type) {
         case "FOLLOW":
             return {
-                ...state, users: state.users.map(el => el.userId === action.userId ? {...el, followed: true} : el)
+                ...state, users: state.users.map(el => el.id === action.userId ? {...el, followed: true} : el)
             };
         case "UNFOLLOW":
             return {
-                ...state, users: state.users.map(el => el.userId === action.userId ? {...el, followed: false} : el)
+                ...state, users: state.users.map(el => el.id === action.userId ? {...el, followed: false} : el)
             };
         case "SET_USERS":
             return {
@@ -82,4 +86,4 @@ export const usersReducer = (state: InitialStateType = initialState, action: Act
 export const followAC = (userId: string): FollowActionType => ({type: 'FOLLOW', userId});
 export const unfollowAC = (userId: string): UnfollowActionType => ({type: 'UNFOLLOW', userId});
 
-export  const setUsersAC = (users: UserType[]): SetUsersActionType => ({type: 'SET_USERS', users})
+export const setUsersAC = (users: UserType[]): SetUsersActionType => ({type: 'SET_USERS', users})
