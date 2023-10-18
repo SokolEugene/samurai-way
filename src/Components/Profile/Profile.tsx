@@ -5,9 +5,7 @@ export type ProfilePropsType = {
 // store: StoreType
 }
 
-export const Profile = (props: ProfilePropsType) => {
-    debugger
-
+export const Profile = (/*props: ProfilePropsType*/) => {
     return (
         <div className={"profileContent"}>
             <ProfileInfo/>

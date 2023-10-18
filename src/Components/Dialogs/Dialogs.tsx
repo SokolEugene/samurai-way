@@ -5,6 +5,30 @@ import {Message} from './Message/Message'
 import {DialogsPropsType} from "./DialogsContainer";
 
 
+/*class Dialogs extends React.Component<any, any> {
+
+    render() {
+        return (
+            <div className={s.dialogs}>
+                <div className={s.dialogsItems}> {dialogsElements} </div>
+                <div className={s.messagesElements}>
+                    <div>{messagesElements}</div>
+                    <div>
+                <textarea onChange={onMessageChange}
+                          ref={newMessageEl}
+                          value={props.dialogsPage.newMessageText}/>
+                    </div>
+                    <div>
+                        <button onClick={onClickHandler}>Send message</button>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}*/
+
+
+
 export const Dialogs = (props: DialogsPropsType) => {
     let newMessageEl = useRef<HTMLTextAreaElement>(null)
     let onClickHandler = () => {
