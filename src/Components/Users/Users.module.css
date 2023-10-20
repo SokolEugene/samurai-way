@@ -7,3 +7,27 @@
 .item img {
     width: 35px;
 }
+
+.selectedPage {
+    font-weight: bold;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination span {
+    margin: 0 4px;
+    padding: 4px 8px;
+   /*border: 1px solid #ccc;*/
+    cursor: pointer;
+    user-select: none;
+}
+
+.pagination span.selectedPage {
+    background-color: #06a511;
+    color: #fff;
+    /*border-color: #006517;*/
+}

@@ -1,7 +1,13 @@
 import {AddPostActionType, profileReducer, UpdateNewPostActionType} from "./profile-reducer";
 import {AddMessageActionType, dialogsReducer, UpdateNewMessageActionType} from "./dialogs-reducer";
 import {combineReducers, createStore} from "redux";
-import {FollowActionType, SetUsersActionType, UnfollowActionType, usersReducer} from "./users-reducer";
+import {
+    FollowActionType,
+    SetPagesActionType, setTotalUsersCountActionType,
+    SetUsersActionType,
+    UnfollowActionType,
+    usersReducer
+} from "./users-reducer";
 
 
 export type ActionsTypes =
@@ -12,6 +18,9 @@ export type ActionsTypes =
     | FollowActionType
     | UnfollowActionType
     | SetUsersActionType
+    | SetPagesActionType
+    | setTotalUsersCountActionType
+
 
 // export type AddPostActionType = ReturnType<typeof addPostAC>// автоматическая типизация
 // export type UpdateNewPostActionType = ReturnType<typeof updateNewPostTextAC>// автоматическая типизация
