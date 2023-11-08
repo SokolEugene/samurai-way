@@ -3,7 +3,7 @@ import {AddMessageActionType, dialogsReducer, UpdateNewMessageActionType} from "
 import {combineReducers, createStore} from "redux";
 import {
     FollowActionType,
-    SetPagesActionType, setTotalUsersCountActionType,
+    SetPagesActionType, setToggleFetchingActionType, setTotalUsersCountActionType,
     SetUsersActionType,
     UnfollowActionType,
     usersReducer
@@ -20,6 +20,7 @@ export type ActionsTypes =
     | SetUsersActionType
     | SetPagesActionType
     | setTotalUsersCountActionType
+    | setToggleFetchingActionType
 
 
 // export type AddPostActionType = ReturnType<typeof addPostAC>// автоматическая типизация
