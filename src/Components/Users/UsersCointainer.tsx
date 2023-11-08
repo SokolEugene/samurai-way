@@ -76,6 +76,16 @@ const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
         isFetching: state.usersPage.isFetching
     }
 }
+
+export const UsersContainer: any = connect(mapStateToProps, {
+    follow,
+    unfollow,
+    setUsers,
+    setCurrentPage,
+    setTotalUsersCount,
+    setToggleFetching,
+})(UsersAPIContainer);
+
 /*const mapDispatchToProps = (dispatch: Dispatch): MapDispatchToPropsType => {
     return {
         follow: (userId: string) => {
@@ -101,11 +111,3 @@ const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
 
 
 //export const UsersContainer: any = connect(mapStateToProps, mapDispatchToProps)(UsersAPIContainer);
-export const UsersContainer: any = connect(mapStateToProps, {
-    follow,
-    unfollow,
-    setUsers,
-    setCurrentPage,
-    setTotalUsersCount,
-    setToggleFetching,
-})(UsersAPIContainer);

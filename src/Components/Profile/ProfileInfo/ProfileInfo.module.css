@@ -6,10 +6,37 @@
 }
 .description {
     padding: 10px 10px 10px 15px;
+    max-width: 400px;
 }
 
 .img {
     flex-grow: 1;
-
 }
 
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+    margin-top: 12px;
+}
+
+p {
+    margin: 8px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+}

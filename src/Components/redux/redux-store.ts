@@ -1,4 +1,4 @@
-import {AddPostActionType, profileReducer, UpdateNewPostActionType} from "./profile-reducer";
+import {AddPostActionType, profileReducer, setUserProfileType, UpdateNewPostActionType} from "./profile-reducer";
 import {AddMessageActionType, dialogsReducer, UpdateNewMessageActionType} from "./dialogs-reducer";
 import {combineReducers, createStore} from "redux";
 import {
@@ -21,6 +21,7 @@ export type ActionsTypes =
     | SetPagesActionType
     | setTotalUsersCountActionType
     | setToggleFetchingActionType
+    | setUserProfileType
 
 
 // export type AddPostActionType = ReturnType<typeof addPostAC>// автоматическая типизация
