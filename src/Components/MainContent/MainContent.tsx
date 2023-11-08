@@ -10,8 +10,6 @@ import {DialogsContainer} from "../Dialogs/DialogsContainer";
 import {UsersContainer} from "../Users/UsersCointainer";
 import {ProfileContainer} from "../Profile/ProfileContainer";
 
-
-
 export type MainContentPropsType = {
     // state: RootStateType
     // dispatch: (action: ActionsTypes) => void

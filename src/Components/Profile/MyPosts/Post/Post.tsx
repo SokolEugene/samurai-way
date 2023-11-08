@@ -6,7 +6,6 @@ type PostPropsType = {
     likeCounts: number
     id: string
 }
-
 export const Post = (props: PostPropsType) => {
     return <div className={s.item}>
         <img src={avatar} alt="avatar"/>

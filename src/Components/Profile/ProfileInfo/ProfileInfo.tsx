@@ -8,25 +8,23 @@ type ProfileInfoPropsType = {
     profile: ProfileUserType
 }
 export const ProfileInfo = (props: ProfileInfoPropsType) => {
-    if(!props.profile){
+    if (!props.profile) {
         return <Preloader/>
     }
-
     return (
         <div className={s.profileInfo}>
-           {/* <div className={s.bgImg}>*/}
+            {/* <div className={s.bgImg}>*/}
             <img src={bgImg} alt={'bgimg'}/>
 
             <div className={s.description}>
                 <img src={props.profile.photos.small !== null ? props.profile.photos.small : avatar} alt={'bgimg'}/>
-
-                    <h2>{props.profile.fullName}</h2>
-                    <p>About Me: {props.profile.aboutMe}</p>
-                    <p>Looking for a Job: {props.profile.lookingForAJob ? 'Yes' : 'No'}</p>
-                    {props.profile.lookingForAJob && (
-                        <p>Job Description: {props.profile.lookingForAJobDescription}</p>
-                    )}
-                    <h3>Contacts:</h3>
+                <h2>{props.profile.fullName}</h2>
+                <p>About Me: {props.profile.aboutMe}</p>
+                <p>Looking for a Job: {props.profile.lookingForAJob ? 'Yes' : 'No'}</p>
+                {props.profile.lookingForAJob && (
+                    <p>Job Description: {props.profile.lookingForAJobDescription}</p>
+                )}
+                <h3>Contacts:</h3>
                 <ul>
                     {Object.entries(props.profile.contacts).map(([key, value]) => {
                         if (value) {
@@ -41,7 +39,7 @@ export const ProfileInfo = (props: ProfileInfoPropsType) => {
                         return null;
                     })}
                 </ul>
-                </div>
             </div>
+        </div>
     )
 }
