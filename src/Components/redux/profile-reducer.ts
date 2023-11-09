@@ -21,7 +21,7 @@ export type ProfileUserType = {
     lookingForAJob: boolean,
     lookingForAJobDescription: string
     fullName: string
-    userId: number
+    userId: number | string | undefined
     photos: {
         small: string
         large: string
@@ -42,7 +42,7 @@ export type UpdateNewPostActionType = {
 }
 export type setUserProfileType = {
     type: 'SET-USER-PROFILE'
-    profile: object
+    profile: ProfileUserType
 }
 
 export type InitialStateType = {
@@ -90,4 +90,4 @@ export const updateNewPostTextAC = (text: string): UpdateNewPostActionType => {
         newText: text
     }
 };
-export const setUserProfile = (profile: any): setUserProfileType => ({type: "SET-USER-PROFILE", profile})
+export const setUserProfile = (profile: ProfileUserType): setUserProfileType => ({type: "SET-USER-PROFILE", profile})
