@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import {Header} from './Components/Header/Header';
 import {Footer} from './Components/Footer/Footer';
 import {MainContent} from './Components/MainContent/MainContent';
 import {BrowserRouter} from 'react-router-dom';
+import HeaderContainer from "./Components/Header/HeaderContainer";
 
 /*export type AppType = {
     state: RootStateType
@@ -15,7 +15,7 @@ export const App = () => {
     return (
         <BrowserRouter>
             <div className={'contentWrapper'}>
-                <Header/>
+                <HeaderContainer/>
                 <MainContent />
                 <Footer/>
             </div>

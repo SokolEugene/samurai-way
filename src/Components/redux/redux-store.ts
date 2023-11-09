@@ -8,6 +8,7 @@ import {
     UnfollowActionType,
     usersReducer
 } from "./users-reducer";
+import {authReducer} from "./auth-reducer";
 
 
 export type ActionsTypes =
@@ -35,7 +36,8 @@ export type ActionsTypes =
 export const rootReducer = combineReducers({
     profilePage: profileReducer,
     dialogsPage: dialogsReducer,
-    usersPage: usersReducer
+    usersPage: usersReducer,
+    auth: authReducer
 });
 
 

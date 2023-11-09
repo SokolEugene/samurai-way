@@ -18,12 +18,11 @@ function ProfileContainer(props: ProfilePropsType) {
     let { userId } = useParams();
     if (!userId) {
         // @ts-ignore
-        userId = 2;
+        userId = 30087;
         //userId :props.profile.userId;
     }
 
     useEffect(() => {
-        console.log(props)
         axios
             .get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
             .then((response) => {
