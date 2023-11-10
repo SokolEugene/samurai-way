@@ -28,9 +28,8 @@
 }
 
 .pagination span.selectedPage {
-    background-color: #06a511;
+    background-color: #427841;
     color: #fff;
-    /*border-color: #006517;*/
 }
 .userPreShow {
     display: flex;
