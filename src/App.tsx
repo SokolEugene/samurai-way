@@ -1,38 +1,26 @@
 import React from 'react';
 import './App.css';
-import {Header} from './Components/Header/Header';
 import {Footer} from './Components/Footer/Footer';
 import {MainContent} from './Components/MainContent/MainContent';
-import {RootStateType} from './Components/redux/state';
 import {BrowserRouter} from 'react-router-dom';
+import HeaderContainer from "./Components/Header/HeaderContainer";
 
-export type AppType = {
+/*export type AppType = {
     state: RootStateType
-    addPost: () => void
-    addMessage: () => void
-    updateNewPost: (newText: string) => void
-    updateNewMessage: (newText: string) => void
-}
+    dispatch: (action: ActionsTypes) => void
+    store: StoreType
+}*/
 
-
-export const App = (props: AppType) => {
-
+export const App = () => {
     return (
         <BrowserRouter>
             <div className={'contentWrapper'}>
-                <Header/>
-                <MainContent state={props.state}
-                             addPost={props.addPost}
-                             updateNewPost={props.updateNewPost}
-                             addMessage={props.addMessage}
-                             updateNewMessage={props.updateNewMessage}
-                             /*dialogsPage={props.state.dialogsPage}*//>
-
+                <HeaderContainer/>
+                <MainContent />
                 <Footer/>
             </div>
         </BrowserRouter>
     );
 }
-
 
 

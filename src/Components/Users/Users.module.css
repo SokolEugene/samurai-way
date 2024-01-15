@@ -1,0 +1,45 @@
+.users {
+    padding: 10px 10px 10px 15px;
+}
+.item{
+    color: white;
+
+}
+.item img {
+    width: 35px;
+}
+
+.selectedPage {
+    font-weight: bold;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination span {
+    margin: 0 4px;
+    padding: 4px 8px;
+   /*border: 1px solid #ccc;*/
+    cursor: pointer;
+    user-select: none;
+}
+
+.pagination span.selectedPage {
+    background-color: #427841;
+    color: #fff;
+}
+.userPreShow {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    width: 125px;
+
+}
+.userPreShow:hover {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}

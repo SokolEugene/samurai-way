@@ -1,20 +1,19 @@
-import { MyPosts} from './MyPosts/MyPosts';
 import {ProfileInfo} from './ProfileInfo/ProfileInfo';
-import {ProfilePageType} from '../redux/state';
+import {MyPostsContainer} from "./MyPosts/MyPostsContainer";
+import {ProfileUserType} from "../redux/profile-reducer";
+import {Preloader} from "../Preloader/Preloader";
 
-export type ProfilePropsType = {
-    profilePage: ProfilePageType
-    addPost: () => void
-    updateNewPost: (newText: string) => void
+type ProfilePropsType = {
+    profile: ProfileUserType
 }
-
-export const Profile = (props: ProfilePropsType) => {
-
-
+export const Profile = (props: ProfilePropsType )=> {
+    if (!props.profile) {
+        return <Preloader/>
+    }
     return (
         <div className={"profileContent"}>
-            <ProfileInfo/>
-            <MyPosts profilePage={props.profilePage} addPost={props.addPost} updateNewPost={props.updateNewPost}/>
+            <ProfileInfo profile={props.profile}/>
+            <MyPostsContainer/>
         </div>
     )
 }

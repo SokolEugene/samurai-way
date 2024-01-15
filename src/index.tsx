@@ -1,9 +1,14 @@
 import React from 'react';
-
 import './index.css';
+import {store} from './Components/redux/redux-store';
+import ReactDOM from 'react-dom';
+import './index.css';
+import {App} from './App';
+import {Provider} from "react-redux";
 
-import {renderEntireTree} from './render';
-import {state} from './Components/redux/state';
+ReactDOM.render(
+    <Provider store={store}><App/>
+    </Provider>,
 
-
-renderEntireTree(state)
+    document.getElementById('root')
+);
